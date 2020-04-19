@@ -24,17 +24,23 @@ public class EmployeeService {
 
 	public void changeEmpPassword(String empId, String pass) {
 		// TODO Auto-generated method stub
+		if(er.existsById(empId)) {
 		Employee e = er.findByEmpId(empId);
 		e.setPassword(pass);
+		}
 		
 	}
 
 	public String viewIncrementalStatus(String empId) {
 		// TODO Auto-generated method stub
 		String s = "No Incremental status";
+
+		if(er.existsById(empId)) {
 		Employee e = er.findByEmpId(empId);
 		
-		return e.getIncrement_status();
+		s =  e.getIncrement_status();
+		}
+		return s;
 	}
 
 	
