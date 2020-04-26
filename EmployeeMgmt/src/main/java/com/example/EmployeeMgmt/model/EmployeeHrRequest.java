@@ -20,6 +20,11 @@ public class EmployeeHrRequest {
 		this.phone = phone;
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "EmployeeHrRequest [entryID=" + entryID + ", fromEmpID=" + fromEmpID + ", toHRID=" + toHRID + ", phone="
+				+ phone + ", email=" + email + "]";
+	}
 	public String getEntryID() {
 		return entryID;
 	}
