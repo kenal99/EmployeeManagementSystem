@@ -13,7 +13,7 @@ public class Employee {
 	String empId;
 	int user_type;
 	String name;
-	Date DOJ; 
+	String DOJ;
 	String password;
 	String phone;
 	String email;
@@ -22,14 +22,16 @@ public class Employee {
 	String increment_status;
 	String security_clearance;
 	String location; 
-	
-	public Employee(String empId, int user_type, String name, Date dOJ, String password, String phone, String email,
-			String role, Float salary, String increment_status, String security_clearance, String location) {
+	public Employee()
+	{
+		
+	}
+	public Employee(int user_type, String name, String DOJ, String password, String phone, String email, String role,
+			Float salary, String increment_status, String security_clearance, String location) {
 		super();
-		this.empId = empId;
 		this.user_type = user_type;
 		this.name = name;
-		DOJ = dOJ;
+		this.DOJ = DOJ;
 		this.password = password;
 		this.phone = phone;
 		this.email = email;
@@ -39,9 +41,30 @@ public class Employee {
 		this.security_clearance = security_clearance;
 		this.location = location;
 	}
-	
-	
-	public String getEmpId() {
+
+
+	public Employee(String empId, int user_type, String name, Date dOJ, String password, String phone, String email,
+			String role, Float salary, String increment_status, String security_clearance, String location) {
+		super();
+		this.empId = empId;
+		this.user_type = user_type;
+		this.name = name;
+		this.DOJ = DOJ;
+		this.password = password;
+		this.phone = phone;
+		this.email = email;
+		this.role = role;
+		this.salary = salary;
+		this.increment_status = increment_status;
+		this.security_clearance = security_clearance;
+		this.location = location;
+	}
+
+    public Employee(int user_type, String taran, Date date, String root, String phone, String email, String systems_engineer, float salary, String good, String security_clearance, String hyderabad) {
+    }
+
+
+    public String getEmpId() {
 		return empId;
 	}
 	public void setEmpId(String empId) {
@@ -59,10 +82,10 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDOJ() {
+	public String getDOJ() {
 		return DOJ;
 	}
-	public void setDOJ(Date dOJ) {
+	public void setDOJ(String dOJ) {
 		DOJ = dOJ;
 	}
 	public String getPassword() {
