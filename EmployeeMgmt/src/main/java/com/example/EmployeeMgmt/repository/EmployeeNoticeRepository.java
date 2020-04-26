@@ -6,9 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.example.EmployeeMgmt.model.EmployeeNotice;
 
-public interface EmployeeNoticeRepository extends MongoRepository<EmployeeNotice, String> {
+public interface EmployeeNoticeRepository extends MongoRepository<EmployeeNotice,String> {
 
-	ArrayList<EmployeeNotice> getEmpMsgById(String empId);
-
-
+    ArrayList<EmployeeNotice> getEmpMsgByEmpId(String empId);
 }
