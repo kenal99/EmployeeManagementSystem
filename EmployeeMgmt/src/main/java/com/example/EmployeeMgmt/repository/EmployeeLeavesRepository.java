@@ -7,5 +7,9 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.example.EmployeeMgmt.model.Employee;
 import com.example.EmployeeMgmt.model.EmployeeLeaves;
 
-public interface EmployeeLeavesRepository extends MongoRepository<EmployeeLeaves, String>{
+public interface EmployeeLeavesRepository extends MongoRepository<EmployeeLeaves,Integer>{
+
+    void deleteById(String empId);
+
+    Optional<EmployeeLeaves> findById(String empId);
 }
