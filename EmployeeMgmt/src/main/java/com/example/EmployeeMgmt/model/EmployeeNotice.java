@@ -5,23 +5,42 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "EmployeeNotice")
 public class EmployeeNotice {
-	@Id
-	int id;
-	String empId;
-	String from;
-	String message;
-	public EmployeeNotice(String empId,String from, String message) {
-		super();
-		this.empId = empId;
-		this.from = from;
-		this.message = message;
+
+	//@Transient
+    public static final String SEQUENCE_NAME = "emp_notice_sequence";
+
+	public EmployeeNotice() {
+
 	}
-	
-	public String getEmpId() {
+
+	@Override
+	public String toString() {
+		return "EmpNoticeTemp [id=" + id + ", from=" + from + ", to=" + empId + ", message=" + message + "]";
+	}
+	@Id
+	String id;
+	String from;
+	String empId;
+	String message;
+
+	public String getTo() {
 		return empId;
 	}
-	public void setEmpId(String empId) {
-		this.empId = empId;
+
+	public void setTo(String to) {
+		this.empId = to;
+	}
+
+	public EmployeeNotice(String from, String to) {
+		super();
+		this.from = from;
+		this.empId =to;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getFrom() {
 		return from;
@@ -35,6 +54,5 @@ public class EmployeeNotice {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
 	
 }
