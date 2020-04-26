@@ -48,11 +48,10 @@ public class EmployeeController {
 
 		
 	
-	
 	//Change Password
-	@PutMapping("/changePassword/{empId}/{pass}")
-	public void changeEmpPassword(@PathVariable("empId") String empId,@PathVariable("pass") String pass) {
-		es.changeEmpPassword(empId,pass);
+	@PutMapping("/changePassword/{empId}")
+	public void changeEmpPassword(@RequestBody Employee emp,@PathVariable("empId") String empId) {
+		es.changeEmpPassword(emp,empId);
 	}
 	
 	//request to Add email and phone
@@ -69,7 +68,7 @@ public class EmployeeController {
 		
 	//View Employee Profile
 	@GetMapping("/viewProfile/{empId}")
-	public Optional<Employee> getEmployee(@PathVariable("empId") String empId){
+	public Employee getEmployee(@PathVariable("empId") String empId){
 		return es.getEmployee(empId);
 	}
 	
@@ -81,7 +80,7 @@ public class EmployeeController {
 	
 	//View Leave Status
 	@GetMapping("/viewLeaveStatus/{empId}")
-	public Optional<EmployeeLeaves> viewLeaveStatus(@PathVariable("empId") String empId) {
+	public EmployeeLeaves viewLeaveStatus(@PathVariable("empId") int empId) {
 		return els.viewLeaveStatus(empId);
 	}
 	
