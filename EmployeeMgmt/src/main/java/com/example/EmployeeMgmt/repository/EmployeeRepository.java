@@ -9,7 +9,5 @@ import com.example.EmployeeMgmt.model.Employee;
 public interface EmployeeRepository extends MongoRepository<Employee, String> {
 
 
-	Employee findByEmpId(String empId);
-
-	
+    Employee findByEmpId(String empId);
 }
