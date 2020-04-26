@@ -5,12 +5,16 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "EmployeeLeave")
+@Document(collection = "EmployeeLeaves")
 public class EmployeeLeaves {
+	
+	//@Transient
+    public static final String SEQUENCE_NAME = "emp_leave_sequence";
+
 	@Id
 	int id;
 	String empId;
-	String name; 
+	String name;
 	int leaves_left;
 	int leaves_applied;
 	int leaves_approved;
@@ -25,7 +29,15 @@ public class EmployeeLeaves {
 		this.leaves_approved = leaves_approved;
 		
 	}
-	
+	public EmployeeLeaves() {
+
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getEmpId() {
 		return empId;
 	}
